@@ -1,1 +1,13 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The cookie used to manage a user's session is vulnerable to being accessed programatically 
+and used to forge requests from other domains. By setting up the session so that the cookie
+does not appear in document.cookie, it is no longer readable by the attacker. By only accepting
+a cookie if it comes from the same domain, it prevents attackers from sending malicous requests
+from external domains.
+
+Spoofing violates Confidentiality by allowing attackers to access a session that belongs to another user.
+
+Bonus: The secret key that is used to sign the session cookie is hard-coded into the program which
+allows attackers to hijack a session by guessing the session id. Making it accessible via an alternative
+(input or environment variable) prevents this attack from taking place
