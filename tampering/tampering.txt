@@ -1,6 +1,8 @@
 The vulnerability in this program is that the unsanitized input for the user's name
 is sent as part of the HTML response. As such, the input can contain an HTML script component
-that manipulates the page that the user receives.
+that manipulates the page that the user receives. By "sanitizing" the input by explicitly
+converting special characters into strings, the secure version prevents tampering by ensuring input
+is only treated as a string. 
 
 This means that Tampering violates the Availability property of CIA via unsanitized inputs
 affecting the web page in a way that prevents the user from interacting with the desired content.
