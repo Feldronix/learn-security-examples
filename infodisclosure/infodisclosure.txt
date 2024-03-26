@@ -1,3 +1,13 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 Which CIA property does tampering violate?
 What additional security mechanisms can you incorporate?
+
+Using unsanitized input as part of the Mongoose query leaves the program vulnerable to 
+injection attacks where the attacker inputs a value that manipulates the query to expose
+more data than intended. The secure version sanitizes the input by removing any special characters, 
+preventing the query from revealing sensitive data.
+
+Information disclosure violates Confidentiality due to the additional data revealed via unsanitized queries.
+
+Parameterizing the data prevents information disclosure by ensuring that malicious input does not affect the
+query due to being sent for execution seperately.
