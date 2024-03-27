@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Similar to the previous attack, there is no verification of the client's activity. 
+In addition to this authentication, the secure version also logs all actions 
+(and information such as IP) to track activity more effectively.
+
+Audit policies that search for malicious patterns help to identify/analyze repudiation-related
+attacks more effectively.
