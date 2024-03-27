@@ -1,0 +1,9 @@
+The insecure script does not have a way to validate whether the client
+is actually the user they claim to be, allowing an attacker to act as an 
+admin by guessing the correct ID. By using a session to track clients, the secure
+version allows the client to be authenticated .
+
+Since the session is pivotal to authentication, securing the session itself via hiding
+cookies (from being read programatically and only sent to the same domain) secures it further.
+Adding more authentication beyond the session secures the script further (such as via 2FA) to
+prevent privilege escalation even when session is hijacked.
