@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability is that attackers can provide input that crashes the server. 
+By continously sending these malicious requests, access to the server is blocked.
+The secure version prevents this attack by handling cases that would crash program,
+ allowing it to continue servicing clients.
+
+ Setting up services that limit the rate at which a client can send requests also helps to combat DOS attacks
+ though doesn't completely nullify the threat (especially DDOS attacks).
